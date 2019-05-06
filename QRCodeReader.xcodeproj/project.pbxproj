@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3BE01AD63A783BCA53F55A13 /* Pods_QRCodeReaderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0CFC2E61385D59E2438F4D /* Pods_QRCodeReaderUITests.framework */; };
 		87F681D68DFF69CBF05A7A82 /* Pods_QRCodeReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F96F501A15CD7220F37A6E /* Pods_QRCodeReaderTests.framework */; };
+		8A0D9CDF2279065F00A602B3 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D9CDE2279065F00A602B3 /* MainScreenViewController.swift */; };
 		8AF957AC226A08D10068430E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF957AB226A08D10068430E /* AppDelegate.swift */; };
 		8AF957B1226A08D10068430E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF957AF226A08D10068430E /* Main.storyboard */; };
 		8AF957B3226A08D30068430E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF957B2226A08D30068430E /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		37FBAFC3770826E3B7B5EF8D /* Pods-QRCodeReaderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCodeReaderUITests.debug.xcconfig"; path = "Target Support Files/Pods-QRCodeReaderUITests/Pods-QRCodeReaderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5D0CFC2E61385D59E2438F4D /* Pods_QRCodeReaderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRCodeReaderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71CD13EBF76152D166E5112B /* Pods-QRCodeReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCodeReaderTests.debug.xcconfig"; path = "Target Support Files/Pods-QRCodeReaderTests/Pods-QRCodeReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8A0D9CDE2279065F00A602B3 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		8AF957A8226A08D10068430E /* QRCodeReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF957AB226A08D10068430E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AF957B0226A08D10068430E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				8AFB0D00227226EE0061E39B /* RealmDb.swift */,
+				8A0D9CDE2279065F00A602B3 /* MainScreenViewController.swift */,
 				8AFB0D0622722C5C0061E39B /* ScannedCode.swift */,
 				8AF957AB226A08D10068430E /* AppDelegate.swift */,
 				8AF957D9226A0F020068430E /* QRScannerViewController.swift */,
@@ -407,6 +410,7 @@
 			files = (
 				8AFB0D0522722B8C0061E39B /* CodesHistoryTableViewCell.swift in Sources */,
 				8AF957AC226A08D10068430E /* AppDelegate.swift in Sources */,
+				8A0D9CDF2279065F00A602B3 /* MainScreenViewController.swift in Sources */,
 				8AFB0D01227226EE0061E39B /* RealmDb.swift in Sources */,
 				8AF957DA226A0F020068430E /* QRScannerViewController.swift in Sources */,
 				8AFB0D0322722B6E0061E39B /* CodesHistoryTableViewController.swift in Sources */,

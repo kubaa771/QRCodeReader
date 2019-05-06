@@ -12,6 +12,10 @@ import RealmSwift
 class CodesHistoryTableViewController: UITableViewController {
     
     var allScannedCodes: Results<ScannedCode>! = nil
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +52,16 @@ class CodesHistoryTableViewController: UITableViewController {
         // Configure the cell...
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCellRow = allScannedCodes[indexPath.row]
+        let alert = UIAlertController(title: "Code", message: selectedCellRow.metadata, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { (action) in
+            UIPasteboard.general.string = selectedCellRow.metadata
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
 

@@ -33,10 +33,8 @@ class RealmDb {
     func addNewScannedCode(newScannedCode: ScannedCode) {
         let allScannedCodes = realm.objects(ScannedCode.self)
         print(allScannedCodes)
-        let lastScannedCode = allScannedCodes.last
-        
-        if lastScannedCode?.metadata == newScannedCode.metadata {
-            print("this code was already added")
+        if allScannedCodes.contains(where: {$0.metadata == newScannedCode.metadata}) {
+            print("This code is already in your history")
         } else {
             print("add code")
             try! realm.write {
