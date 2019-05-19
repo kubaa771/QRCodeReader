@@ -12,6 +12,7 @@ import RealmSwift
 class CodesHistoryTableViewController: UITableViewController {
     
     var allScannedCodes: Results<ScannedCode>! = nil
+    var toAnimate: Bool = false
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -23,6 +24,7 @@ class CodesHistoryTableViewController: UITableViewController {
     }
     
     func modelSetUp() {
+        toAnimate = true
         allScannedCodes = RealmDb.shared.getScannedCodes()
         tableView.reloadData()
     }
@@ -53,6 +55,30 @@ class CodesHistoryTableViewController: UITableViewController {
             UIPasteboard.general.string = selectedCellRow.metadata
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let codeToDelete = allScannedCodes[indexPath.row]
+            RealmDb.shared.deleteScannedCode(scannedCode: codeToDelete)
+            modelSetUp()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if toAnimate {
+            cell.alpha = 0
+            UIView.animate(
+                withDuration: 0.5,
+                delay: 0.05 * Double(indexPath.row),
+                animations: {
+                    cell.alpha = 1
+            })
+            print(indexPath.row)
+            if indexPath.row == allScannedCodes.count - 1{
+                toAnimate = false
+            }
+        }
     }
     
 }

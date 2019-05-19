@@ -48,4 +48,10 @@ class RealmDb {
         return allScannedCodes
     }
     
+    func deleteScannedCode(scannedCode: ScannedCode) {
+        try! realm.write {
+            realm.delete(scannedCode)
+        }
+    }
+    
 }

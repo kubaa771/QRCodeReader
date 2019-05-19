@@ -79,11 +79,11 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             qrCodeFrameView?.frame = CGRect.zero
             return
         }
-        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
+        guard let metadataObj = metadataObjects[0] as? AVMetadataMachineReadableCodeObject else { return }
         //if metadataObj.type == AVMetadataObject.ObjectType.qr {
         let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
         qrCodeFrameView?.frame = barCodeObject!.bounds
-        if metadataObj.stringValue != nil {
+        if metadataObj.stringValue != nil && self.viewIfLoaded?.window != nil{
             alert = UIAlertController(title: "Code", message: metadataObj.stringValue, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { (action) in
